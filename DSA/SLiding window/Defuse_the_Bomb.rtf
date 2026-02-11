@@ -1,0 +1,33 @@
+{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 LeetCode 1652 - Defuse the Bomb (C++ Solution)\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 class Solution \{ public: vector decrypt(vector& code, int k) \{ int n = code.size(); vector res(n, 0);\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1     if (k == 0) return res;\line
+\line
+    int start, end, sum = 0;\line
+\line
+    if (k > 0) \{\line
+        start = 1;\line
+        end = k;\line
+    \} else \{\line
+        start = n + k;\line
+        end = n - 1;\line
+        k = -k;\line
+    \}\line
+\line
+    for (int i = start; i <= end; i++)\line
+        sum += code[i % n];\line
+\line
+    for (int i = 0; i < n; i++) \{\line
+        res[i] = sum;\line
+        sum -= code[start % n];\line
+        start++;\line
+        end++;\line
+        sum += code[end % n];\line
+    \}\line
+    return res;\line
+\}\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \};\par}
+}
