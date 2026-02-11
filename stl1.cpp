@@ -1,0 +1,10 @@
+#include<iostream>
+using namespace std;
+void print(){
+    cout<<"raj";
+
+}
+int main (){
+    print();
+    return 0;
+}
