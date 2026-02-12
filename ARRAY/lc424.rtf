@@ -1,0 +1,20 @@
+{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 #include <bits/stdc++.h> using namespace std;\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 int characterReplacement(string s, int k) \{ vector freq(26, 0); int l = 0, maxFreq = 0, ans = 0;\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 for (int r = 0; r < s.size(); r++) \{\line
+    freq[s[r] - 'A']++;\line
+    maxFreq = max(maxFreq, freq[s[r] - 'A']);\line
+\line
+    while ((r - l + 1) - maxFreq > k) \{\line
+        freq[s[l] - 'A']--;\line
+        l++;\line
+    \}\line
+    ans = max(ans, r - l + 1);\line
+\}\line
+return ans;\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \}\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 int main() \{ string s = \u8220"AABABBA\u8221"; int k = 1; cout << characterReplacement(s, k); \}\par}
+}

@@ -1,0 +1,18 @@
+{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 LeetCode 209 - Minimum Size Subarray Sum (C++)\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 int minSubArrayLen(int target, vector& nums) \{ int l = 0, sum = 0, ans = INT_MAX;\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 for (int r = 0; r < nums.size(); r++) \{\line
+    sum += nums[r];\line
+\line
+    while (sum >= target) \{\line
+        ans = min(ans, r - l + 1);\line
+        sum -= nums[l];\line
+        l++;\line
+    \}\line
+\}\line
+return ans == INT_MAX ? 0 : ans;\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \}\par}
+}
